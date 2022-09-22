@@ -48,9 +48,11 @@ The second file should be a *.gz* tab delimited file containing gene read counts
 To run this program in the command line interface type: 
 
 ```text
-python .\plot_gtex.py --gene_reads ".\GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz" --sample_attributes ".\GTEx_Analysis_v
-8_Annotations_SampleAttributesDS.txt" --gene "SDHB" [--output_file "SDHB.png"]
-
+python .\plot_gtex.py 
+    --gene_reads ".\GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz" 
+    --sample_attributes ".\GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt" 
+    --gene "SDHB" 
+    --output_file "SDHB.png"
 ```
 
 Note: The output_file argument is the only one that is not required as it has a default. All other arguments the user 
