@@ -48,11 +48,19 @@ The second file should be a *.gz* tab delimited file containing gene read counts
 To run this program in the command line interface type: 
 
 ```text
-python .\plot_gtex.py 
-  --gene_reads ".\GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz" 
-  --sample_attributes ".\GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt" 
-  --gene "SDHB" 
-  --output_file "SDHB.png"
+python .\plot_gtex.py --gene_reads ".\GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz" --sample_attributes ".\GTEx_Analysis_v
+8_Annotations_SampleAttributesDS.txt" --gene "SDHB" --output_file "SDHB.png"
+```
+
+To run a bash script which will take user defined arguments as well as run all unit and functional tests and check for 
+PEP8 formatting type: 
+
+```text
+./run.sh \
+    'GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz' \
+    'GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt' \
+    'SDHB' \
+    'SDHB.png'
 ```
 
 Note: The output_file argument is the only one that is not required as it has a default. All other arguments the user 
@@ -76,11 +84,18 @@ look like:
   + ADD: Functions for data read in. 
   + ADD: Functions for obtaining gene expression counts per sample by tissue. 
   + ADD: Parser so user is able to run script through the command line. 
++ 2.0 
+  + CHANGE: updated linear search to check for list type variable and return system exit code 1 if no index was found
+  + CHANGE: updated binary search to check for list type variable 
+  + ADD: created test_utils.py file to test the linear search, binary search and index list functions
+  + ADD: created search.py to run the linear and binary searches from the command line 
+  + ADD: created test_search.ph to run functional tests on the linear and binary search functions 
+  + ADD: run.sh file where bash script will run user input arguments to create plot and all tests
 
 ## Installation and Dependencies 
 
 You must have Python 3 installed. Any Python 3 version should work, but it was written in Python 3.9 using a Windows-based 
-operating system. Packages matplotlib 3.6.0, and argparse 1.4.0 will need to be installed. 
+operating system. Packages matplotlib 3.6.0, pycodestyle 2.9.1, and argparse 1.4.0 will need to be installed. 
 
 ## Contact 
 
